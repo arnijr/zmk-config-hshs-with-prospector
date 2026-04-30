@@ -13,23 +13,24 @@
 #
 ---
 include:
-  - board: nice_nano_v2
-    shield: hshs52_left nice_view_adapter nice_view
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  - board: nice_nano_v2
-    shield: hshs52_right nice_view_adapter nice_view
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+  # 1. The Prospector Dongle (Central)
   - board: seeeduino_xiao_ble
-    shield: hshs52_dongle prospector_adapter
-  - board: nice_nano_v2
-    shield: hshs46_left nice_view_adapter nice_view
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  - board: nice_nano_v2
-    shield: hshs46_right nice_view_adapter nice_view
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    shield: cradio_dongle prospector_adapter
+    artifact-name: prospector_dongle
+
+  # 2. The Ferris Left Half (Peripheral)
   - board: seeeduino_xiao_ble
-    shield: hshs46_dongle prospector_adapter
-  - board: nice_nano_v2
+    shield: cradio_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: cradio_left
+
+  # 3. The Ferris Right Half (Peripheral)
+  - board: seeeduino_xiao_ble
+    shield: cradio_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: cradio_right
+
+  # 4. Settings Reset for the XIAO ecosystem
+  - board: seeeduino_xiao_ble
     shield: settings_reset
-  - board: seeeduino_xiao_ble
-    shield: settings_reset
+    artifact-name: reset_xiao_dongle
