@@ -1,25 +1,18 @@
-# Copyright (c) 2021-2022 The ZMK Contributors
-# SPDX-License-Identifier: MIT
+# 1. Set the identity for the whole family
+config ZMK_KEYBOARD_NAME
+    default "Ferris"
 
-if SHIELD_CRADIO_LEFT || SHIELD_CRADIO_RIGHT
-
-config ZMK_SPLIT
-    default y
-
+# 2. Set the default role to NOT be the boss
 config ZMK_SPLIT_ROLE_CENTRAL
     default n
 
-endif
-
-if SHIELD_CRADIO_DONGLE
-
-config ZMK_KEYBOARD_NAME
-    default "Ferris Dongle"
-
-config ZMK_SPLIT_ROLE_CENTRAL
+config ZMK_SPLIT
     default y
 
-config ZMK_SPLIT
+# 3. Only override the role for the actual Dongle
+if SHIELD_CRADIO_DONGLE
+
+config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
@@ -28,7 +21,6 @@ config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
 config BT_MAX_CONN
     default 7
 
-config BT_MAX_PAIRED
-    default 7
+config BT_MAX_PAIRED=7
 
 endif
