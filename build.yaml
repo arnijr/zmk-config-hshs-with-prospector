@@ -12,29 +12,32 @@
 #     shield: reviung41
 #
 ---
+---
 include:
-  # The Dongle (XIAO - built on v0.3)
+  # The Dongle (XIAO)
   - board: seeeduino_xiao_ble
     shield: "cradio_dongle prospector_adapter"
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
-    artifact-name: ferris_prospector_dongle
+    artifact-name: prospector_dongle
 
-  # The Left Half (Using the v0.3 compatible name for nrfMicro)
+  # The Left Half (nrfmicro_13 for v0.3 compatibility)
   - board: nrfmicro_13
     shield: cradio_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-    artifact-name: cradio_left
+    artifact-name: ferris_left
 
-  # The Right Half
+  # The Right Half (nrfmicro_13)
   - board: nrfmicro_13
     shield: cradio_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-    artifact-name: cradio_right
+    artifact-name: ferris_right
 
-  # Reset files
+  # Reset File for the Prospector Dongle
   - board: seeeduino_xiao_ble
     shield: settings_reset
     artifact-name: reset_xiao_dongle
+
+  # Reset File for the Ferris Halves
   - board: nrfmicro_13
     shield: settings_reset
     artifact-name: reset_nrfmicro_halves
