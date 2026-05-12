@@ -13,20 +13,20 @@
 #
 ---
 include:
-  # The Dongle (XIAO)
+  # The Dongle (XIAO - built on v0.3)
   - board: seeeduino_xiao_ble
     shield: "cradio_dongle prospector_adapter"
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
     artifact-name: ferris_prospector_dongle
 
-  # The Left Half (Switching to nice_nano_v2 for stability)
-  - board: nice_nano_v2
+  # The Left Half (Using the v0.3 compatible name for nrfMicro)
+  - board: nrfmicro_13
     shield: cradio_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: cradio_left
 
   # The Right Half
-  - board: nice_nano_v2
+  - board: nrfmicro_13
     shield: cradio_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: cradio_right
@@ -35,7 +35,6 @@ include:
   - board: seeeduino_xiao_ble
     shield: settings_reset
     artifact-name: reset_xiao_dongle
-    
-  - board: nice_nano_v2
+  - board: nrfmicro_13
     shield: settings_reset
-    artifact-name: reset_ferris_halves
+    artifact-name: reset_nrfmicro_halves
