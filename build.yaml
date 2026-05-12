@@ -13,21 +13,29 @@
 #
 ---
 include:
-  # The Dongle (The Boss)
+  # The Dongle (XIAO)
   - board: seeeduino_xiao_ble
-    shield: cradio_dongle prospector_adapter
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y # Explicit Boss
+    shield: "cradio_dongle prospector_adapter"
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+    artifact-name: ferris_prospector_dongle
 
-  # The Left Half (The Peripheral)
-  - board: seeeduino_xiao_ble
+  # The Left Half (nRFMicro - Using your specific working board path)
+  - board: nrfmicro/nrf52840/zmk
     shield: cradio_left
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n # Explicit Worker
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: cradio_left
 
-  # The Right Half (The Peripheral)
-  - board: seeeduino_xiao_ble
+  # The Right Half (nRFMicro)
+  - board: nrfmicro/nrf52840/zmk
     shield: cradio_right
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n # Explicit Worker
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: cradio_right
 
-  # Reset file
+  # Reset files
   - board: seeeduino_xiao_ble
     shield: settings_reset
+    artifact-name: reset_xiao_dongle
+    
+  - board: nrfmicro/nrf52840/zmk
+    shield: settings_reset
+    artifact-name: reset_ferris_halves
