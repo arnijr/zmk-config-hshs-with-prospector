@@ -16,16 +16,17 @@ include:
   # The Dongle (The Boss)
   - board: seeeduino_xiao_ble
     shield: cradio_dongle prospector_adapter
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y # Explicit Boss
 
   # The Left Half (The Peripheral)
   - board: seeeduino_xiao_ble
     shield: cradio_left
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n # Explicit Worker
 
   # The Right Half (The Peripheral)
   - board: seeeduino_xiao_ble
     shield: cradio_right
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n # Explicit Worker
 
   # Reset file
   - board: seeeduino_xiao_ble
