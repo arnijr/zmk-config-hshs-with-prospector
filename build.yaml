@@ -20,17 +20,15 @@ include:
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
     artifact-name: prospector_dongle
 
-  # The Left Half (nrfmicro_13 for v0.3 compatibility)
-  - board: nrfmicro_13
+  - board: seeeduino_xiao_ble
     shield: cradio_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-    artifact-name: ferris_left
+    artifact-name: cradio_left
 
-  # The Right Half (nrfmicro_13)
-  - board: nrfmicro_13
+  - board: seeeduino_xiao_ble
     shield: cradio_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-    artifact-name: ferris_right
+    artifact-name: cradio_right
 
   # Reset File for the Prospector Dongle
   - board: seeeduino_xiao_ble
