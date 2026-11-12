@@ -26,6 +26,6 @@
     };
 };
 
-&prospector_display {
+&oled {
     status = "okay";
 };
