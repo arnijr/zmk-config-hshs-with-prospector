@@ -2,13 +2,15 @@
 
 / {
     chosen {
-        zmk,kscan = &virtual_kscan;
+        zmk,kscan = &mock_kscan;
         zmk,physical-layout = &cradio_layout;
     };
 
-    virtual_kscan: virtual_kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        wakeup-source;
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        rows = <0>;
+        columns = <0>;
+        events = <0>;
     };
 };
 
