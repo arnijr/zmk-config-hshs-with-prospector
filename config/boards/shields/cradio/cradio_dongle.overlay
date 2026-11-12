@@ -25,3 +25,7 @@
         >;
     };
 };
+
+&prospector_display {
+    status = "okay";
+};
