@@ -1,5 +1,4 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <cradio.dtsi>
 
 / {
     chosen {
@@ -13,8 +12,4 @@
         columns = <0>;
         events = <0>;
     };
-};
-
-&cradio_layout {
-    transform = <&default_transform>;
 };
