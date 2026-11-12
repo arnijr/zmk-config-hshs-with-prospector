@@ -1,0 +1,17 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,kscan = &virtual_kscan;
+        zmk,physical-layout = &cradio_layout;
+    };
+
+    virtual_kscan: virtual_kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
+    };
+};
+
+&cradio_layout {
+    transform = <&default_transform>;
+};

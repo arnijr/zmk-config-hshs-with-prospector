@@ -1,0 +1,10 @@
+file_format: "1"
+id: cradio_dongle
+name: Ferris Cradio Dongle
+type: shield
+features:
+  - keys
+siblings:
+  - cradio_left
+  - cradio_right
+  - cradio_dongle
