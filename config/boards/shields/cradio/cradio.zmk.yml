@@ -1,10 +1,10 @@
 file_format: "1"
-id: cradio_dongle
-name: Ferris Cradio Dongle
+id: hshs46
+name: HSHS46
 type: shield
+requires: [pro_micro]
 features:
   - keys
 siblings:
-  - cradio_left
-  - cradio_right
-  - cradio_dongle
+  - hshs46_left
+  - hshs46_right
