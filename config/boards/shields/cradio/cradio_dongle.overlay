@@ -26,6 +26,24 @@
     };
 };
 
-&oled {
+&spi3 {
+    compatible = "nordic,nrf-spim";
     status = "okay";
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-names = "default";
+    cs-gpios = <&gpio0 5 GPIO_ACTIVE_LOW>;
+
+    prospector_display: ssd1306@0 {
+        compatible = "solomon,ssd1306fb";
+        reg = <0>;
+        spi-max-frequency = <8000000>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        com-invdir;
+        prechargep = <0x22>;
+    };
 };
