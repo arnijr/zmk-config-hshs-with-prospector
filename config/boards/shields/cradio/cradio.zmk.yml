@@ -2,7 +2,9 @@ file_format: "1"
 id: cradio
 name: Cradio
 type: shield
-requires: [seeeduino_xiao_ble]
+requires: [pro_micro]
+features:
+  - keys
 siblings:
   - cradio_left
   - cradio_right
