@@ -1,4 +1,14 @@
+/*
+ * Copyright (c) 2021-2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 #include "cradio.dtsi"
+
+&default_transform {
+    col-offset = <5>;
+};
 
 &kscan0 {
     col-gpios
