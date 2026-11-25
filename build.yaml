@@ -10,39 +10,18 @@
 #   - board: bdn9_rev2
 #   - board: nice_nano_v2
 #     shield: reviung41
-#
-# - board: nice_nano_v2
-#   shield: hshs52_left nice_view_adapter nice_view
-#   cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-# - board: nice_nano_v2
-#   shield: hshs52_right nice_view_adapter nice_view
-#   cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-# - board: seeeduino_xiao_ble
-#   shield: hshs52_dongle prospector_adapter
-# - board: nice_nano_v2
-#   shield: hshs46_left nice_view_adapter nice_view
-#   cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-# - board: nice_nano_v2
-#   shield: hshs46_right nice_view_adapter nice_view
-#   cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-# - board: seeeduino_xiao_ble
-#   shield: hshs46_dongle prospector_adapter
-# - board: nice_nano_v2
-#   shield: settings_reset
-# - board: seeeduino_xiao_ble
-#   shield: settings_reset
 ---
 include:
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: sweep_dongle prospector_adapter
-    cmake-args: -DCONFIG_BT_L2CAP_TX_BUF_COUNT=16 -DCONFIG_BT_BUF_ACL_TX_COUNT=16 -DCONFIG_BT_CTLR_TX_PWR_PLUS_8=y
-  - board: nrfmicro_13
+    cmake-args: -DCONFIG_BT_ATT_TX_COUNT=16 -DCONFIG_BT_L2CAP_TX_BUF_COUNT=16 -DCONFIG_BT_BUF_ACL_TX_COUNT=16 -DCONFIG_BT_CTLR_TX_PWR_PLUS_8=y
+  - board: nrfmicro/nrf52840/zmk
     shield: sweep_left
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y -DCONFIG_CLOCK_CONTROL_NRF_K32SRC_500PPM=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_SLEEP_TIMEOUT=900000 -DCONFIG_BT_CTLR_TX_PWR_PLUS_4=y
-  - board: nrfmicro_13
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y -DCONFIG_CLOCK_CONTROL_NRF_K32SRC_500PPM=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_SLEEP_TIMEOUT=900000 -DCONFIG_BT_CTLR_TX_PWR_PLUS_8=y
+  - board: nrfmicro/nrf52840/zmk
     shield: sweep_right
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y -DCONFIG_CLOCK_CONTROL_NRF_K32SRC_500PPM=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_SLEEP_TIMEOUT=900000 -DCONFIG_BT_CTLR_TX_PWR_PLUS_4=y
-  - board: seeeduino_xiao_ble
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y -DCONFIG_CLOCK_CONTROL_NRF_K32SRC_500PPM=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_SLEEP_TIMEOUT=900000 -DCONFIG_BT_CTLR_TX_PWR_PLUS_8=y
+  - board: xiao_ble//zmk
     shield: settings_reset
-  - board: nrfmicro_13
+  - board: nrfmicro/nrf52840/zmk
     shield: settings_reset
