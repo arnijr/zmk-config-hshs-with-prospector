@@ -1,10 +1,11 @@
 file_format: "1"
-id: cradio
-name: Cradio
+id: sweep
+name: Sweep
 type: shield
 requires: [pro_micro]
 features:
   - keys
 siblings:
-  - cradio_left
-  - cradio_right
+  - sweep_left
+  - sweep_right
+  - sweep_dongle

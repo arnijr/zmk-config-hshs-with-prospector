@@ -34,13 +34,13 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: cradio_dongle prospector_adapter
+    shield: sweep_dongle prospector_adapter
   - board: nrfmicro_13
-    shield: cradio_left
-    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    shield: sweep_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: nrfmicro_13
-    shield: cradio_right
-    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    shield: sweep_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: seeeduino_xiao_ble
     shield: settings_reset
   - board: nrfmicro_13
