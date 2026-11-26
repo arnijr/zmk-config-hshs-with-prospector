@@ -5,7 +5,6 @@ type: shield
 requires: [pro_micro]
 features:
   - keys
-  - studio
 siblings:
   - sweep_left
   - sweep_right
